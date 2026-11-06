@@ -3,7 +3,9 @@ import cors from "cors";
 import authRoutes from "./routes/authRoutes.js";
 import goalRoutes from "./routes/goalRoutes.js";
 import habitRoutes from "./routes/habitRoutes.js";
+import habitLogRoutes from "./routes/habitLogRoutes.js";
 import assistantRoutes from "./routes/assistantRoutes.js";
+
 
 const app = express();
 
@@ -18,6 +20,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/goals", goalRoutes);
 app.use("/api/habits", habitRoutes);
 app.use("/api/assistant", assistantRoutes);
+app.use("/api/habit-logs", habitLogRoutes);
 
 app.use((_req, res) => {
   res.status(404).json({ message: "Route not found" });
